@@ -13,10 +13,14 @@ class Solution {
             }
         }
 
-        if (start < nums.length) {
-            return nums[start];
-        } else {
-            return nums[0];
-        }
+        // if (start < nums.length) {
+        //     return nums[start];
+        // } else {
+        //     return nums[0];
+        // }
+        
+        //OR
+        
+        return nums[start % nums.length];
     }
 }
