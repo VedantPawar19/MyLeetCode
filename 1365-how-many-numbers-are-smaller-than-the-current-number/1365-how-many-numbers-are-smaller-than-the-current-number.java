@@ -1,6 +1,6 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        int[] temp = new int[nums.length];
+        int[] ans = new int[nums.length];
         int count;
         for(int i = 0; i<nums.length; i++){
             count =0;
@@ -9,8 +9,8 @@ class Solution {
                     count = count + 1;
                 }
             }
-            temp[i] = count;
+            ans[i] = count;
         }
-        return temp;
+        return ans;
     }
 }
