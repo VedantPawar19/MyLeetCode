@@ -1,24 +1,17 @@
 class Solution {
-    public int peakIndexInMountainArray(int[] arr) {
-        int mid = 0;
+    public int peakIndexInMountainArray(int[] nums) {
         int start = 0;
-        int end = arr.length-1;
-
+        int end = nums.length - 1;
+        
         while(start<end){
-            mid = start + (end-start)/2;
-
-            boolean IsAsc = arr[mid-1]<arr[mid] && arr[mid]<arr[mid+1];
-            boolean IsEqual = arr[mid-1]<arr[mid] && arr[mid]>arr[mid+1];
-
-            if(IsAsc){
-                start = mid;
-            }else if(IsEqual){
-                return mid;
-            }else{
+            int mid = start +(end-start)/2;
+            if(nums[mid] > nums[mid+1]){
                 end = mid;
+            }else{
+                start = mid+1;
             }
         }
-
-        return mid;
+        
+        return start;
     }
 }
