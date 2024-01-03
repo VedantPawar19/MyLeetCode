@@ -7,8 +7,8 @@ class Solution {
         while(start<end){
             mid = start + (end-start)/2;
 
-            boolean IsAsc = arr[mid-1]<=arr[mid] && arr[mid]<=arr[mid+1];
-            boolean IsEqual = arr[mid-1]<=arr[mid] && arr[mid]>=arr[mid+1];
+            boolean IsAsc = arr[mid-1]<arr[mid] && arr[mid]<arr[mid+1];
+            boolean IsEqual = arr[mid-1]<arr[mid] && arr[mid]>arr[mid+1];
 
             if(IsAsc){
                 start = mid;
@@ -19,6 +19,6 @@ class Solution {
             }
         }
 
-        return arr[mid];
+        return mid;
     }
 }
