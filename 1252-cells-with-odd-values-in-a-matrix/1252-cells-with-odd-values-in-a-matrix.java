@@ -8,8 +8,7 @@ class Solution {
                 matrix[i][j] = 0;
             }
         }
-        System.out.println(Arrays.deepToString(matrix));
-
+        
         // final matrix after increments
         increment(m, n, indices, matrix);
         
