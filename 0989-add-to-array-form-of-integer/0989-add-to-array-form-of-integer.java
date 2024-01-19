@@ -10,7 +10,7 @@ class Solution {
             int y = k % 10;
             int sum = x + y + carry;
 
-            ansList.add(0, sum % 10);
+            ansList.add(sum % 10);
             carry = sum / 10;
 
             if (index >= 0) {
@@ -19,6 +19,8 @@ class Solution {
 
             k /= 10;
         }
+        
+        Collections.reverse(ansList);
 
         return ansList;
     }
