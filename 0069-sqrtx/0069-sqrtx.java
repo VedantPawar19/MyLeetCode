@@ -4,15 +4,19 @@ class Solution {
             return x;
         }
         
-        int ans = 0;
-        for(int i = 1; i <= x; i++){
-            if(i <= x/i){
-                ans = i;
-            }else{
-                break;
+        int left = 1, right = x, result = 0;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (mid <= x / mid) {
+                left = mid + 1;
+                result = mid;
+            } else {
+                right = mid - 1;
             }
         }
         
-        return ans;
+        return result;
     }
 }
